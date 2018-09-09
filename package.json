@@ -1,0 +1,15 @@
+{
+  "name": "wotd",
+  "version": "1.0.0",
+  "description": "Word of the day quiz!",
+  "main": "index.js",
+  "author": "Zach Posten",
+  "license": "MIT",
+  "preferGlobal": true,
+  "bin": "./index.js",
+  "private": false,
+  "dependencies": {
+    "commander": "^2.18.0",
+    "inquirer": "^6.2.0"
+  }
+}
