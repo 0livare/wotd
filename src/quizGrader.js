@@ -1,3 +1,4 @@
+const util = require('./util')
 
 function grade(quiz, usersAnswers) {
     // quiz is in the format:
@@ -26,8 +27,8 @@ function grade(quiz, usersAnswers) {
 
     let correctAnswerCount = 0
 
-    let correctAnswersByWord = arrayToObject(quiz.answerKey, "word")
-    let questionsByWord = arrayToObject(quiz.questions, "word")
+    let correctAnswersByWord = util.arrayToObject(quiz.answerKey, "word")
+    let questionsByWord = util.arrayToObject(quiz.questions, "word")
 
     for(let word in usersAnswers) {
         let correctAnswerIndex = correctAnswersByWord[word].correctChoiceIndex
@@ -50,12 +51,7 @@ function grade(quiz, usersAnswers) {
     }
 }
 
-function arrayToObject(array, keyField) {
-   return array.reduce((obj, item) => {
-      obj[item[keyField]] = item
-      return obj
-    }, {})
- }
+
 
  function assignLetterGrade(percentage) {
     // Letter	Grade	Grade Points

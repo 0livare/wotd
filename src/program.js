@@ -14,6 +14,8 @@ program
     .description('Generate a new quiz')
     .action(() => {
         let quiz = quizGenerator.generate(3)
+        console.info('Quiz code: ' + quiz.code)
+
         let prompts = quizToPrompQuestions(quiz.questions)
         prompt(prompts).then(usersAnswers => {
             let quizGrade = quizGrader.grade(quiz, usersAnswers)

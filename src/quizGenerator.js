@@ -1,4 +1,5 @@
 const definitions = require('./definitions')
+const quizEncoder = require('./quizEncoder')
 
 const answersPerQuestion = 4
 const wrongAnswersPerQuestion = answersPerQuestion - 1
@@ -11,6 +12,7 @@ function generate(questionCount) {
     let quiz = {
         questions: [],
         answerKey: [],
+        get code() { return quizEncoder.encode(this) }
     }
 
     for(let i=0; i<questionCount; ++i) {
