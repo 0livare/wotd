@@ -23,13 +23,13 @@ function generate(questionCount) {
 
         let correctDefs = definitions[word]
         let chosenCorrectDef = correctDefs[randIndex(correctDefs.length)]
-        let answers = [chosenCorrectDef, ...getWrongDefsForWord(word)]
-        let scranbledAnswers = shuffle(answers)
-        let correctAnswerIndex = scranbledAnswers.indexOf(chosenCorrectDef)
+        let choices = [chosenCorrectDef, ...getWrongDefsForWord(word)]
+        let scrambledChoices = shuffle(choices)
+        let correctAnswerIndex = scrambledChoices.indexOf(chosenCorrectDef)
 
         quiz.questions.push({
             word,
-            answers: scranbledAnswers,
+            choices: scrambledChoices,
         })
 
         quiz.answerKey.push({

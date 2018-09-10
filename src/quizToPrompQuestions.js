@@ -9,6 +9,6 @@ function quizQuestionToPromptQuestion(quizQuestion) {
         type: 'list',
         name: quizQuestion.word,
         message: 'What does ' + quizQuestion.word + ' mean?',
-        choices: quizQuestion.answers,
+        choices: quizQuestion.choices,
     }
 }

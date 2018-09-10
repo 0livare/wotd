@@ -10,9 +10,9 @@ function encode(quiz) {
     //   Each part of each question separated by a dot
     //     - The index of the word this question is based on from the flat list of q's
     //     - The relative index of the correct answer for this q.  0 to n-1 where n is 
-    //       the number of answers to this question.
+    //       the number of choices for this question.
     //     - params: The rest of the dot separated values are the definitions that make
-    //       up the possible answers to this question.  There are n of them.
+    //       up the possible choices for this question.  There are n of them.
     // <word-idx>.<correct-ans-idx>.
 
     let allWords = Object.keys(definitions)
@@ -29,8 +29,8 @@ function encode(quiz) {
 
         let qCode = `${wordIndex}.${correctChoiceIndex}`
 
-        for(let answer of q.answers) {
-            qCode += '.' + allDefinitions.indexOf(answer)
+        for(let choice of q.choices) {
+            qCode += '.' + allDefinitions.indexOf(choice)
         }
 
         encoding += qCode
@@ -57,14 +57,14 @@ function decode(encodedQuiz) {
         let word = allWords[wordIndex]
         let correctChoiceIndex = Number(parts[1])
 
-        let answers = []
+        let choices = []
         for(let i=2; i<parts.length; ++i) {
             let definitionIndex = parts[i]
             let definition = allDefinitions[definitionIndex]
-            answers.push(definition)
+            choices.push(definition)
         }
 
-        quiz.questions.push({word, answers })
+        quiz.questions.push({word, choices })
         quiz.answerKey.push({word, correctChoiceIndex })
     }
 

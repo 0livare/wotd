@@ -6,7 +6,7 @@ function grade(quiz, usersAnswers) {
     //   "questions": [
     //     {
     //       "word": "Kierstyn",
-    //       "answers": [
+    //       "choices": [
     //         "Eopch - def2",
     //         "Kierstyn - def3",
     //         "Essence - def1",
@@ -32,7 +32,7 @@ function grade(quiz, usersAnswers) {
 
     for(let word in usersAnswers) {
         let correctAnswerIndex = correctAnswersByWord[word].correctChoiceIndex
-        let usersChoices = questionsByWord[word].answers
+        let usersChoices = questionsByWord[word].choices
         let correctAnswer = usersChoices[correctAnswerIndex]
 
         let usersAnswer = usersAnswers[word]
