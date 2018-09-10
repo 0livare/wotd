@@ -32,7 +32,7 @@ function generate(questionCount) {
 
         quiz.answerKey.push({
             word,
-            correctChoice: indexToLetter(correctAnswerIndex),
+            correctChoiceIndex: correctAnswerIndex,
         })
     }
 
@@ -92,10 +92,6 @@ function shuffle(array) {
 // Copied from https://stackoverflow.com/a/22624453/2517147
 function randIndex(length) {
     return Math.floor(Math.random() * length)
-}
-
-function indexToLetter(index) {
-    String.fromCharCode(97 + index)
 }
 
 
