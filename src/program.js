@@ -10,11 +10,11 @@ program
     .description('Word of the day quiz!')
 
 program
-    .command('generateQuiz')
+    .command('generateQuiz [questionCount]')
     .alias('gen')
     .description('Generate a new quiz')
-    .action(() => {
-        let quiz = quizGenerator.generate(3)
+    .action(questionCount => {
+        let quiz = quizGenerator.generate(questionCount || 5)
         console.info('Quiz code: ' + quiz.code)
         displayQuiz(quiz)
     })
