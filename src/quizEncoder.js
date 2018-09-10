@@ -17,7 +17,6 @@ function encode(quiz) {
 
     let allWords = Object.keys(definitions)
     let allDefinitions = Object.values(definitions).reduce((arr, defs) => arr.concat(defs), [])
-
     let wordToAnswers = util.arrayToObject(quiz.answerKey, "word")
     let encoding = ''
 
@@ -41,9 +40,35 @@ function encode(quiz) {
 }
 
 function decode(encodedQuiz) {
+    let allWords = Object.keys(definitions)
+    let allDefinitions = Object.values(definitions).reduce((arr, defs) => arr.concat(defs), [])
 
+    let qCodes = encodedQuiz.split('-')
 
+    let quiz = {
+        questions: [],
+        answerKey: [],
+        get code() { return encode(this) }
+    }
 
+    for(let qCode of qCodes) {
+        let parts = qCode.split('.')
+        let wordIndex = Number(parts[0])
+        let word = allWords[wordIndex]
+        let correctChoiceIndex = Number(parts[1])
+
+        let answers = []
+        for(let i=2; i<parts.length; ++i) {
+            let definitionIndex = parts[i]
+            let definition = allDefinitions[definitionIndex]
+            answers.push(definition)
+        }
+
+        quiz.questions.push({word, answers })
+        quiz.answerKey.push({word, correctChoiceIndex })
+    }
+
+    return quiz
 }
 
 module.exports = {encode, decode}
