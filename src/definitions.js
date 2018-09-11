@@ -65,9 +65,6 @@ let definitions = {
         'a dispute over or about words',
         'a controversy marked by verbiage',
     ],
-    'sensationalism': [
-        'the use of exciting or shocking stories or language at the expense of accuracy, in order to provoke public interest or excitement',
-    ],
     'languor': [
         'the state or feeling, often plesent, of tiredness or inertia',
         'an oppressive stillness of the air',
