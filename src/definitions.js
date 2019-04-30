@@ -91,7 +91,7 @@ let definitions = {
         'the quality of being a woman; femininity',
     ],
     'mellifluous': [
-        'having a smooch, rich flow',
+        'having a smooth, rich flow',
     ],
     'confabulate': [
         'to converse informally; chat',
@@ -125,7 +125,7 @@ let definitions = {
         'to deparpt secretly and hide oneself',
     ],
     'prevaricate': [
-        'to deviate form the truth; equivocate',
+        'to deviate from the truth; equivocate',
     ],
     'buttonhole': [
         'to detain in conversation by or as if by holding on to the outer garments of',
