@@ -7,7 +7,7 @@ WOTD is a command line word quiz that you can compete against your friends with.
 ## Getting Started
 
 ```bash
-git clone https://github.com/zposten/wotd.git
+git clone https://github.com/0livare/wotd.git
 cd wotd
 npm install
 npm link # allows for usage of global 'wotd' instead of 'node index.js'
